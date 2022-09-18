@@ -115,15 +115,15 @@ function draw() {
 }
 //main loop
 async function update() {
-    if(!(gamepadconnected&&navigator.getGamepads()))
-        await time.waitbool("gamepadconnected&&navigator.getGamepads()",()=>{
-            ctx.fillStyle = "white";
-            ctx.fillText("PLEASE CONNECT CONTROLLER",canvas.width/2-("PLEASE CONNECT CONTROLLER".length*35/2),canvas.height/2);
-        });
-    addGamepadKeyMap("ArrowUp",   e=>{return Math.round(e.axes[7])===-1||Math.round(e.axes[1])===-1;},"pacman.dir===0");
-    addGamepadKeyMap("ArrowDown", e=>{return Math.round(e.axes[7])===1||Math.round(e.axes[1])===1},"pacman.dir===2");
-    addGamepadKeyMap("ArrowLeft", e=>{return Math.round(e.axes[6])===-1||Math.round(e.axes[0])===-1},"pacman.dir===3");
-    addGamepadKeyMap("ArrowRight",e=>{return Math.round(e.axes[6])===1||Math.round(e.axes[0])===1},"pacman.dir===1");
+    // if(!(gamepadconnected&&navigator.getGamepads()))
+        // await time.waitbool("gamepadconnected&&navigator.getGamepads()",()=>{
+            // ctx.fillStyle = "white";
+            // ctx.fillText("PLEASE CONNECT CONTROLLER",canvas.width/2-("PLEASE CONNECT CONTROLLER".length*35/2),canvas.height/2);
+        // });
+    // addGamepadKeyMap("ArrowUp",   e=>{return Math.round(e.axes[7])===-1||Math.round(e.axes[1])===-1;},"pacman.dir===0");
+    // addGamepadKeyMap("ArrowDown", e=>{return Math.round(e.axes[7])===1||Math.round(e.axes[1])===1},"pacman.dir===2");
+    // addGamepadKeyMap("ArrowLeft", e=>{return Math.round(e.axes[6])===-1||Math.round(e.axes[0])===-1},"pacman.dir===3");
+    // addGamepadKeyMap("ArrowRight",e=>{return Math.round(e.axes[6])===1||Math.round(e.axes[0])===1},"pacman.dir===1");
     if(end_game)
         return pacman.dieend();
     if(game_quit){
@@ -186,12 +186,12 @@ async function update() {
 var begun = false;
 var munch_b = false;
 async function reset(){
-    if(!gamepadconnected)
-        await time.waitbool("gamepadconnected",()=>{
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            ctx.fillStyle = "white";
-            ctx.fillText("PLEASE CONNECT CONTROLLER",canvas.width/2-("PLEASE CONNECT CONTROLLER".length*35/2),canvas.height/2);
-        });
+    // if(!gamepadconnected)
+        // await time.waitbool("gamepadconnected",()=>{
+            // ctx.clearRect(0,0,canvas.width,canvas.height);
+            // ctx.fillStyle = "white";
+            // ctx.fillText("PLEASE CONNECT CONTROLLER",canvas.width/2-("PLEASE CONNECT CONTROLLER".length*35/2),canvas.height/2);
+        // });
     window.requestAnimationFrame(()=>
         window.requestAnimationFrame(async ()=>{
             ctx.fillStyle = "black"
